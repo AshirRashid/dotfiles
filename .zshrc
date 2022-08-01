@@ -100,7 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-set -o vi
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 source /Users/ashir/.shrc_org/gtm_auto.sh
 source /Users/ashir/.shrc_org/git_auto.sh

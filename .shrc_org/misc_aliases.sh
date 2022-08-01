@@ -22,4 +22,5 @@ alias sts="syncthing --no-browser >/dev/null 2>&1 &"
 alias cptoday="date +'%d-%m-%Y' | pbcopy"
 alias p="pbpaste"
 alias mkx="chmod u+x"
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
 

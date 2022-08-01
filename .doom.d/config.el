@@ -64,7 +64,7 @@
 ;; - `add-load-path!' for adding directories to the `load-path', relative to
 ;;   this file. Emacs searches the `load-path' when you load packages with
 ;;   `require' or `use-package'.
-;; - `map!' for binding new keys
+;; - `map!' for binding new key
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
 ;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
@@ -75,9 +75,4 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
-(setq initial-major-mode 'org-mode)
-(setq org-agenda-files '("~/personal/orgs/"))
-(setq display-line-numbers-type 'relative)
-
-(load-file "/Users/ashir/.doom.d/misc.el")
+(org-babel-load-file "/Users/ashir/.doom.d/custom_config.org")

@@ -29,3 +29,8 @@ function storecb {
     printf "$1\t$(pbpaste)\n" >> /Users/ashir/Sync/Dump/store.md
 }
 
+
+function activate_venv {
+    . "/Users/ashir/.virtualenv/$1/bin/activate"
+
+}
