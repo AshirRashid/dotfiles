@@ -13,13 +13,12 @@ function c {
 
 
 function mcd {
-    mkdir -p "$1"
-    cd "$1"
+    mkdir -p "$1" && cd "$1"
 }
 
 
 # "search processes for"
-function spf {
+function s_ps_for {
     ps -Af | sed -E "1p;/$1/!d" | grep -E -v "sed -E -E 1p;/$1/!d"
 }
 
@@ -34,3 +33,36 @@ function activate_venv {
     . "/Users/ashir/.virtualenv/$1/bin/activate"
 
 }
+
+
+function pycli {
+    python3 -c "from sys import stdin; cli_in = stdin.read(); $1";
+}
+
+
+function gen_rand_nums {
+    python3 -c "import random; print(''.join([str(x) for x in random.choices(range(0, 10), k=$1)]))"
+}
+
+
+function vdir {
+    file="$(ls $1 | fzf)"
+    [ -z "$file" ] || if [ -z "$1" ];then nvim "$file"; else nvim "$1/$file"; fi
+}
+
+
+function odir {
+    file="$(ls $1 | fzf)"
+    [ -z "$file" ] || if [ -z "$1" ];then open "$file"; else open "$1/$file"; fi
+}
+
+
+function rmex {
+    find . ! -name "$1" -maxdepth 1 -exec rm -rf {} +
+}
+
+
+function findex {
+    find . ! -name "$1"
+}
+
